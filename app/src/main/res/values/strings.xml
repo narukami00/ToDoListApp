@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Gotta Do</string>
+    <string name="you_can_do_it">You Can Do It</string>
+    <string name="sample_task">Sample Task</string>
+</resources>
