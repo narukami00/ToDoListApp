@@ -3,8 +3,9 @@
     android:id="@+id/task_text"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="16dp"
     android:textSize="18sp"
-    android:background="#1A496B"
-    android:textColor="#FFD700"
-    />
+    android:textColor="#2b2d30"
+    android:background="@drawable/task_background_not_done"
+    android:foreground="?attr/selectableItemBackground"
+    android:padding="16dp"
+    android:layout_marginBottom="8dp" />

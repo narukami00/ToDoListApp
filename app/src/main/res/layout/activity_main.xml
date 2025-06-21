@@ -1,11 +1,11 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#103852"
+    android:background="@drawable/background"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -14,63 +14,72 @@
         android:orientation="vertical"
         android:padding="16dp">
 
+        <!-- Motivational Title -->
         <TextView
-            android:layout_marginTop="20dp"
-            android:text="@string/you_can_do_it"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="30sp"
-            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:text="@string/you_can_do_it"
             android:textAlignment="center"
-            android:textColor="#FFD700"/>
+            android:textColor="#e4a743"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-medium" />
 
+        <!-- Task Input Section -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="20dp"
             android:layout_marginBottom="16dp"
+            android:background="@android:color/transparent"
             android:orientation="horizontal"
-            android:padding="8dp"
-            android:background="#1A496B">
+            android:padding="8dp">
 
             <EditText
                 android:id="@+id/edit_text"
                 android:layout_width="0dp"
-                android:hint="Enter Item"
+                android:layout_height="50dp"
                 android:layout_weight="4"
-                android:layout_height="wrap_content"
-                android:backgroundTint="#F0F8FF"
-                android:padding="12dp"/>
+                android:hint="Write a Task"
+                android:textColor="#FFFFFF"
+                android:padding="12dp"
+                android:textColorHint="#BBFFFFFF"
+                android:background="@drawable/edittext_rounded" />
 
             <Button
                 android:id="@+id/button"
-                android:layout_width="0dp"
-                android:text="Add"
-                android:textColor="#011059"
-                android:layout_height="wrap_content"
+                android:layout_width="10dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="8dp"
                 android:layout_weight="1"
-                android:backgroundTint="#FFD700"
-                android:padding="12dp"/>
+                android:backgroundTint="#e3a742"
+                android:text="Add"
+                android:textColor="#0A0F2C" />
         </LinearLayout>
 
-        <ListView
-            android:id="@+id/list"
+        <!-- Task List -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:background="#1A496B"
-            android:padding="8dp"/>
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:clipToPadding="false"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:scrollbars="vertical" />
     </LinearLayout>
 
-    <!-- Add the Floating Action Button -->
+    <!-- Floating Action Button -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_clear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end|bottom"
-        android:layout_margin="16dp"
+        android:layout_margin="20dp"
         android:contentDescription="Clear tasks"
         app:srcCompat="@android:drawable/ic_menu_delete"
         android:tint="@android:color/white"
-        android:backgroundTint="#850606"/>
+        android:backgroundTint="#B30000" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -2,30 +2,37 @@ package com.example.gottado;
 
 import java.io.Serializable;
 
-//hello this is some changes
-
 public class Task implements Serializable {
     private String text;
-    private boolean isDone;
+    private boolean done;
+    private long addedTimestamp;
+    private Long completedTimestamp;
 
-    public Task(String text, boolean isDone) {
+    public Task(String text, boolean done) {
         this.text = text;
-        this.isDone = isDone;
+        this.done = done;
+        this.addedTimestamp = System.currentTimeMillis(); // Track creation time
+        this.completedTimestamp = done ? System.currentTimeMillis() : null; // Track completion time
     }
 
     public String getText() {
         return text;
     }
 
-    public void setText(String text) {
-        this.text = text;
-    }
-
     public boolean isDone() {
-        return isDone;
+        return done;
     }
 
     public void setDone(boolean done) {
-        isDone = done;
+        this.done = done;
+        this.completedTimestamp = done ? System.currentTimeMillis() : null;
+    }
+
+    public long getAddedTimestamp() {
+        return addedTimestamp;
+    }
+
+    public Long getCompletedTimestamp() {
+        return completedTimestamp;
     }
 }
